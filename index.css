@@ -1,0 +1,303 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+hgroup,
+div,
+section,
+header,
+footer,
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --color-accent: #fb7c7c;
+  --color-text: #444444;
+}
+
+body {
+  background-color: #fffdfe;
+  padding: 30px;
+  justify-content: center;
+  height: 100%;
+  font-family: Domine;
+  color: var(--color-text);
+}
+
+main {
+  /* max-width: 1300px; */
+  gap: 20px;
+}
+
+header {
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+  h2 {
+    color: var(--color-accent);
+    font-size: 2vw;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-underline-offset: 0.2em;
+    }
+  }
+  h1 {
+    font-size: 4vw;
+    font-weight: 300;
+    color: #383838;
+  }
+}
+
+@keyframes wavy-slide {
+  to {
+    text-align: center;
+  }
+}
+
+#bento {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vh;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff4f3;
+  border-radius: 10px;
+  border: 1px solid #fbc9c9;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  color: var(--color-text);
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+  &:hover {
+    box-shadow: 0px 0px 15px #fb7c7c9a;
+    transform: scale(1.03);
+  }
+}
+
+#puzzles {
+  grid-column: span 3;
+  grid-row: span 4;
+  background-color: #fedcdc;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 2vw;
+
+  .left {
+    grid-row: 1;
+    gap: 2vh;
+    justify-content: center;
+    img {
+      width: 60%;
+      aspect-ratio: 1;
+      height: unset;
+    }
+  }
+
+  .right {
+    grid-column: span 2;
+    justify-content: flex-end;
+    padding-bottom: 3vh;
+    gap: 2vh;
+    h2 {
+      font-family: Domine;
+      font-weight: normal;
+      font-size: 6vw;
+      line-height: 0.9;
+    }
+    p {
+      font-size: 1vw;
+      text-decoration: none;
+      color: var(--color-accent);
+    }
+  }
+
+  .puzzle-img {
+    transform: rotate(9deg);
+    transition: transform 1.5s;
+  }
+
+  .robot-img {
+    transform: rotate(-9deg);
+    transition: transform 1.5s;
+  }
+
+  &:hover {
+    .puzzle-img {
+      transform: rotate(-9deg);
+    }
+
+    .robot-img {
+      transform: rotate(9deg);
+    }
+  }
+}
+
+#resume {
+  grid-row: span 2;
+  justify-content: flex-end;
+  padding: 1vh 1vw;
+  flex-direction: row;
+
+  img {
+    position: absolute;
+    transform: rotate(17deg);
+    top: 6vh;
+    left: -2vw;
+    width: 20vw;
+    z-index: 20;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: top 1.5s;
+  }
+
+  h2 {
+    z-index: 40;
+    font-size: 1.6vw;
+    line-height: 1.2;
+  }
+
+  &:hover {
+    img {
+      top: 1vh;
+    }
+  }
+}
+
+#trees {
+  grid-row: span 4;
+  background-color: #fedcdc;
+  text-align: center;
+  font-size: 1.4vw;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+
+  .pill {
+    width: 80%;
+    background-color: var(--color-accent);
+    padding: 4.5vh 2vw;
+    border-radius: 15%;
+    transition: transform 1.5s;
+  }
+
+  &:hover {
+    .pill {
+      transform: scale(0.9);
+    }
+  }
+}
+
+#interview {
+  grid-row: span 2;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+
+  h2 {
+    font-size: 2vw;
+  }
+
+  svg {
+    stroke: var(--color-text);
+    transition: stroke 1.5s, transform 1.2s;
+  }
+
+  &:hover {
+    svg {
+      stroke: var(--color-accent);
+      transform: scale(1.5);
+    }
+  }
+}
+
+#docs {
+  grid-row: span 2;
+  padding: 1vw 1vh;
+  align-items: center;
+  justify-content: space-between;
+
+  .pill {
+    transition: background-color 2s;
+    background-color: var(--color-accent);
+    color: white;
+    text-align: center;
+    font-size: 1.2vw;
+    line-height: 1.5;
+    padding: 1.2vw;
+    border-radius: 1vw;
+  }
+
+  img {
+    width: 25%;
+  }
+
+  &:hover {
+    .pill {
+      background-color: var(--color-text);
+      color: var(--color-accent);
+    }
+  }
+}
+
+#sonnet {
+  grid-row: span 2;
+  text-align: center;
+  padding: 0.6vh 0.2vw;
+
+  h2 {
+    z-index: 40;
+  }
+
+  img {
+    position: absolute;
+    transform: rotate(-20deg);
+    width: 16vw;
+    top: 6vh;
+    right: -2vw;
+    transition: top 1.5s;
+    z-index: 20;
+  }
+
+  &:hover {
+    img {
+      top: 4vh;
+    }
+  }
+
+  h2 {
+    font-size: 2vw;
+  }
+  .target {
+    font-size: 1.4vw;
+  }
+}
