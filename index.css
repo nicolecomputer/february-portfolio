@@ -35,7 +35,7 @@ body {
 }
 
 body {
-  color-scheme: light dark;
+  color-scheme: dark;
   background-color: light-dark(#fffdfe, #303030);
   padding: 30px;
   justify-content: center;
@@ -252,10 +252,17 @@ header {
     background-color: var(--color-accent);
     color: white;
     text-align: center;
-    font-size: 14px;
+    text-wrap: nowrap;
+    font-size: 10px;
     line-height: 1.5;
     padding: 16px;
     border-radius: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    .pill {
+      font-size: 14px;
+    }
   }
 
   img {
@@ -317,6 +324,15 @@ header {
   body {
     padding: 20px 10px;
   }
+
+  header {
+    h2 {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+  }
   #bento {
     width: 100%;
     display: flex;
@@ -376,14 +392,6 @@ header {
       right: 20px;
       width: 140px;
     }
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
-  header h2 {
-    font-size: 18px;
   }
 
   #puzzles .right h2 {
