@@ -35,7 +35,7 @@ body {
 }
 
 body {
-  color-scheme: dark;
+  color-scheme: light dark;
   background-color: light-dark(#fffdfe, #303030);
   padding: 30px;
   justify-content: center;
